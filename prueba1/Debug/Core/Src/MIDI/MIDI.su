@@ -1,0 +1,5 @@
+../Core/Src/MIDI/MIDI.c:19:6:BucleMIDI	32	static
+../Core/Src/MIDI/MIDI.c:39:9:IdentifyNote	24	static
+../Core/Src/MIDI/MIDI.c:49:6:WriteControl	24	static
+../Core/Src/MIDI/MIDI.c:60:6:Send_MIDINoteOn	64	static
+../Core/Src/MIDI/MIDI.c:121:6:Send_MIDINoteOff	64	static
