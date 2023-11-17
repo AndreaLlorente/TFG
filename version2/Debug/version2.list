@@ -492,8 +492,8 @@ uint8_t IdentifyNote(uint8_t control){ //Comprobar la entrada del MUX (2 entrada
  80005d6:	79fb      	ldrb	r3, [r7, #7]
  80005d8:	4618      	mov	r0, r3
  80005da:	f000 f82b 	bl	8000634 <WriteControl>
-	HAL_Delay(50);
- 80005de:	2032      	movs	r0, #50	; 0x32
+	HAL_Delay(30);
+ 80005de:	201e      	movs	r0, #30
  80005e0:	f000 ff96 	bl	8001510 <HAL_Delay>
 	uint8_t pulsado = 0;
  80005e4:	2300      	movs	r3, #0
