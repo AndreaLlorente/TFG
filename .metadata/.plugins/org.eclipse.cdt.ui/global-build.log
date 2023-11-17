@@ -1,4 +1,4 @@
-13:10:48 **** Incremental Build of configuration Debug for project version2 ****
+18:46:56 **** Incremental Build of configuration Debug for project version2 ****
 make -j8 all 
 arm-none-eabi-gcc "../Core/Src/MIDI/MIDI.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/MIDI/MIDI.d" -MT"Core/Src/MIDI/MIDI.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/MIDI/MIDI.o"
 arm-none-eabi-gcc -o "version2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\andep\STM32CubeIDE\workspace_TFG\version2\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="version2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
@@ -7,7 +7,430 @@ Finished building target: version2.elf
 arm-none-eabi-size   version2.elf 
 arm-none-eabi-objdump -h -S  version2.elf  > "version2.list"
    text	   data	    bss	    dec	    hex	filename
-  13844	    112	   1976	  15932	   3e3c	version2.elf
+  12088	     20	   1708	  13816	   35f8	version2.elf
+Finished building: default.size.stdout
+ 
+Finished building: version2.list
+ 
+18:47:14 **** Incremental Build of configuration Debug for project version2 ****
+make -j8 all 
+arm-none-eabi-size   version2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  12088	     20	   1708	  13816	   35f8	version2.elf
+Finished building: default.size.stdout
+ 
+18:48:46 **** Incremental Build of configuration Debug for project version2 ****
+make -j8 all 
+arm-none-eabi-size   version2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  12088	     20	   1708	  13816	   35f8	version2.elf
+Finished building: default.size.stdout
+ 
+18:50:03 **** Incremental Build of configuration Debug for project version2 ****
+make -j8 all 
+arm-none-eabi-size   version2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  12088	     20	   1708	  13816	   35f8	version2.elf
+Finished building: default.size.stdout
+ 
+18:51:35 **** Incremental Build of configuration Debug for project version2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/MIDI/MIDI.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/MIDI/MIDI.d" -MT"Core/Src/MIDI/MIDI.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/MIDI/MIDI.o"
+arm-none-eabi-gcc -o "version2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\andep\STM32CubeIDE\workspace_TFG\version2\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="version2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: version2.elf
+ 
+arm-none-eabi-size   version2.elf 
+arm-none-eabi-objdump -h -S  version2.elf  > "version2.list"
+   text	   data	    bss	    dec	    hex	filename
+  12088	     20	   1708	  13816	   35f8	version2.elf
+Finished building: default.size.stdout
+ 
+Finished building: version2.list
+ 
+18:52:19 **** Incremental Build of configuration Debug for project version2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/MIDI/MIDI.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/MIDI/MIDI.d" -MT"Core/Src/MIDI/MIDI.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/MIDI/MIDI.o"
+arm-none-eabi-gcc -o "version2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\andep\STM32CubeIDE\workspace_TFG\version2\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="version2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: version2.elf
+ 
+arm-none-eabi-size   version2.elf 
+arm-none-eabi-objdump -h -S  version2.elf  > "version2.list"
+   text	   data	    bss	    dec	    hex	filename
+  12080	     20	   1708	  13808	   35f0	version2.elf
+Finished building: default.size.stdout
+ 
+Finished building: version2.list
+ 
+18:53:33 **** Incremental Build of configuration Debug for project version2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/MIDI/MIDI.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/MIDI/MIDI.d" -MT"Core/Src/MIDI/MIDI.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/MIDI/MIDI.o"
+arm-none-eabi-gcc -o "version2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\andep\STM32CubeIDE\workspace_TFG\version2\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="version2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: version2.elf
+ 
+arm-none-eabi-size   version2.elf 
+arm-none-eabi-objdump -h -S  version2.elf  > "version2.list"
+   text	   data	    bss	    dec	    hex	filename
+  12088	     20	   1708	  13816	   35f8	version2.elf
+Finished building: default.size.stdout
+ 
+Finished building: version2.list
+ 
+18:53:56 **** Incremental Build of configuration Debug for project version2 ****
+make -j8 all 
+arm-none-eabi-size   version2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  12088	     20	   1708	  13816	   35f8	version2.elf
+Finished building: default.size.stdout
+ 
+18:53:59 **** Incremental Build of configuration Debug for project version2 ****
+make -j8 all 
+arm-none-eabi-size   version2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  12088	     20	   1708	  13816	   35f8	version2.elf
+Finished building: default.size.stdout
+ 
+18:54:43 **** Incremental Build of configuration Debug for project version2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/MIDI/MIDI.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/MIDI/MIDI.d" -MT"Core/Src/MIDI/MIDI.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/MIDI/MIDI.o"
+arm-none-eabi-gcc -o "version2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\andep\STM32CubeIDE\workspace_TFG\version2\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="version2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: version2.elf
+ 
+arm-none-eabi-size   version2.elf 
+arm-none-eabi-objdump -h -S  version2.elf  > "version2.list"
+   text	   data	    bss	    dec	    hex	filename
+  12088	     20	   1708	  13816	   35f8	version2.elf
+Finished building: default.size.stdout
+ 
+Finished building: version2.list
+ 
+18:59:34 **** Incremental Build of configuration Debug for project version2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/MIDI/MIDI.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/MIDI/MIDI.d" -MT"Core/Src/MIDI/MIDI.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/MIDI/MIDI.o"
+arm-none-eabi-gcc -o "version2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\andep\STM32CubeIDE\workspace_TFG\version2\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="version2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: version2.elf
+ 
+arm-none-eabi-size   version2.elf 
+arm-none-eabi-objdump -h -S  version2.elf  > "version2.list"
+   text	   data	    bss	    dec	    hex	filename
+  12076	     20	   1708	  13804	   35ec	version2.elf
+Finished building: default.size.stdout
+ 
+Finished building: version2.list
+ 
+19:03:05 **** Incremental Build of configuration Debug for project version2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/MIDI/MIDI.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/MIDI/MIDI.d" -MT"Core/Src/MIDI/MIDI.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/MIDI/MIDI.o"
+../Core/Src/MIDI/MIDI.c: In function 'IdentifyNote':
+../Core/Src/MIDI/MIDI.c:87:17: error: expected expression before 'uint8_t'
+   87 |                 uint8_t j = 0;
+      |                 ^~~~~~~
+../Core/Src/MIDI/MIDI.c:88:9: error: 'j' undeclared (first use in this function)
+   88 |         j++;
+      |         ^
+../Core/Src/MIDI/MIDI.c:88:9: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/MIDI/subdir.mk:19: Core/Src/MIDI/MIDI.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+19:03:09 **** Incremental Build of configuration Debug for project version2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/MIDI/MIDI.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/MIDI/MIDI.d" -MT"Core/Src/MIDI/MIDI.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/MIDI/MIDI.o"
+../Core/Src/MIDI/MIDI.c: In function 'IdentifyNote':
+../Core/Src/MIDI/MIDI.c:87:17: error: expected expression before 'uint8_t'
+   87 |                 uint8_t j = 0;
+      |                 ^~~~~~~
+../Core/Src/MIDI/MIDI.c:88:9: error: 'j' undeclared (first use in this function)
+   88 |         j++;
+      |         ^
+../Core/Src/MIDI/MIDI.c:88:9: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/MIDI/subdir.mk:19: Core/Src/MIDI/MIDI.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+19:03:29 **** Incremental Build of configuration Debug for project version2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/MIDI/MIDI.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/MIDI/MIDI.d" -MT"Core/Src/MIDI/MIDI.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/MIDI/MIDI.o"
+../Core/Src/MIDI/MIDI.c: In function 'IdentifyNote':
+../Core/Src/MIDI/MIDI.c:88:21: error: lvalue required as left operand of assignment
+   88 |                 j++ = 0;
+      |                     ^
+make: *** [Core/Src/MIDI/subdir.mk:19: Core/Src/MIDI/MIDI.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+19:03:34 **** Incremental Build of configuration Debug for project version2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/MIDI/MIDI.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/MIDI/MIDI.d" -MT"Core/Src/MIDI/MIDI.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/MIDI/MIDI.o"
+arm-none-eabi-gcc -o "version2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\andep\STM32CubeIDE\workspace_TFG\version2\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="version2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: version2.elf
+ 
+arm-none-eabi-size   version2.elf 
+arm-none-eabi-objdump -h -S  version2.elf  > "version2.list"
+   text	   data	    bss	    dec	    hex	filename
+  12092	     20	   1708	  13820	   35fc	version2.elf
+Finished building: default.size.stdout
+ 
+Finished building: version2.list
+ 
+19:03:38 **** Incremental Build of configuration Debug for project version2 ****
+make -j8 all 
+arm-none-eabi-size   version2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  12092	     20	   1708	  13820	   35fc	version2.elf
+Finished building: default.size.stdout
+ 
+19:04:42 **** Incremental Build of configuration Debug for project version2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/MIDI/MIDI.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/MIDI/MIDI.d" -MT"Core/Src/MIDI/MIDI.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/MIDI/MIDI.o"
+arm-none-eabi-gcc -o "version2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\andep\STM32CubeIDE\workspace_TFG\version2\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="version2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: version2.elf
+ 
+arm-none-eabi-size   version2.elf 
+arm-none-eabi-objdump -h -S  version2.elf  > "version2.list"
+   text	   data	    bss	    dec	    hex	filename
+  12076	     20	   1708	  13804	   35ec	version2.elf
+Finished building: default.size.stdout
+ 
+Finished building: version2.list
+ 
+19:05:28 **** Incremental Build of configuration Debug for project version2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/MIDI/MIDI.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/MIDI/MIDI.d" -MT"Core/Src/MIDI/MIDI.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/MIDI/MIDI.o"
+arm-none-eabi-gcc -o "version2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\andep\STM32CubeIDE\workspace_TFG\version2\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="version2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: version2.elf
+ 
+arm-none-eabi-size   version2.elf 
+arm-none-eabi-objdump -h -S  version2.elf  > "version2.list"
+   text	   data	    bss	    dec	    hex	filename
+  12076	     20	   1708	  13804	   35ec	version2.elf
+Finished building: default.size.stdout
+ 
+Finished building: version2.list
+ 
+19:06:09 **** Incremental Build of configuration Debug for project version2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/MIDI/MIDI.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/MIDI/MIDI.d" -MT"Core/Src/MIDI/MIDI.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/MIDI/MIDI.o"
+arm-none-eabi-gcc -o "version2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\andep\STM32CubeIDE\workspace_TFG\version2\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="version2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: version2.elf
+ 
+arm-none-eabi-size   version2.elf 
+arm-none-eabi-objdump -h -S  version2.elf  > "version2.list"
+   text	   data	    bss	    dec	    hex	filename
+  12060	     20	   1708	  13788	   35dc	version2.elf
+Finished building: default.size.stdout
+ 
+Finished building: version2.list
+ 
+19:07:57 **** Incremental Build of configuration Debug for project version2 ****
+make -j8 all 
+arm-none-eabi-size   version2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  12060	     20	   1708	  13788	   35dc	version2.elf
+Finished building: default.size.stdout
+ 
+19:11:32 **** Incremental Build of configuration Debug for project version2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/MIDI/MIDI.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/MIDI/MIDI.d" -MT"Core/Src/MIDI/MIDI.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/MIDI/MIDI.o"
+arm-none-eabi-gcc -o "version2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\andep\STM32CubeIDE\workspace_TFG\version2\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="version2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: version2.elf
+ 
+arm-none-eabi-size   version2.elf 
+arm-none-eabi-objdump -h -S  version2.elf  > "version2.list"
+   text	   data	    bss	    dec	    hex	filename
+  12076	     20	   1708	  13804	   35ec	version2.elf
+Finished building: default.size.stdout
+ 
+Finished building: version2.list
+ 
+19:13:04 **** Incremental Build of configuration Debug for project version2 ****
+make -j8 all 
+arm-none-eabi-size   version2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  12076	     20	   1708	  13804	   35ec	version2.elf
+Finished building: default.size.stdout
+ 
+19:14:06 **** Incremental Build of configuration Debug for project version2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/MIDI/MIDI.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/MIDI/MIDI.d" -MT"Core/Src/MIDI/MIDI.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/MIDI/MIDI.o"
+arm-none-eabi-gcc -o "version2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\andep\STM32CubeIDE\workspace_TFG\version2\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="version2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: version2.elf
+ 
+arm-none-eabi-size   version2.elf 
+arm-none-eabi-objdump -h -S  version2.elf  > "version2.list"
+   text	   data	    bss	    dec	    hex	filename
+  12080	     20	   1708	  13808	   35f0	version2.elf
+Finished building: default.size.stdout
+ 
+Finished building: version2.list
+ 
+19:15:36 **** Incremental Build of configuration Debug for project version2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/MIDI/MIDI.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/MIDI/MIDI.d" -MT"Core/Src/MIDI/MIDI.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/MIDI/MIDI.o"
+arm-none-eabi-gcc -o "version2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\andep\STM32CubeIDE\workspace_TFG\version2\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="version2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: version2.elf
+ 
+arm-none-eabi-size   version2.elf 
+arm-none-eabi-objdump -h -S  version2.elf  > "version2.list"
+   text	   data	    bss	    dec	    hex	filename
+  12076	     20	   1708	  13804	   35ec	version2.elf
+Finished building: default.size.stdout
+ 
+Finished building: version2.list
+ 
+19:18:32 **** Incremental Build of configuration Debug for project version2 ****
+make -j8 all 
+arm-none-eabi-size   version2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  12076	     20	   1708	  13804	   35ec	version2.elf
+Finished building: default.size.stdout
+ 
+19:19:22 **** Incremental Build of configuration Debug for project version2 ****
+make -j8 all 
+arm-none-eabi-size   version2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  12076	     20	   1708	  13804	   35ec	version2.elf
+Finished building: default.size.stdout
+ 
+19:20:43 **** Incremental Build of configuration Debug for project version2 ****
+make -j8 all 
+arm-none-eabi-size   version2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  12076	     20	   1708	  13804	   35ec	version2.elf
+Finished building: default.size.stdout
+ 
+19:23:01 **** Incremental Build of configuration Debug for project version2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/MIDI/MIDI.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/MIDI/MIDI.d" -MT"Core/Src/MIDI/MIDI.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/MIDI/MIDI.o"
+../Core/Src/MIDI/MIDI.c: In function 'BucleMIDI':
+../Core/Src/MIDI/MIDI.c:68:1: error: unknown type name 'r'
+   68 | r                               Send_MIDINoteOn_2(control);
+      | ^
+../Core/Src/MIDI/MIDI.c:68:1: warning: parameter names (without types) in function declaration
+../Core/Src/MIDI/MIDI.c:68:33: error: conflicting types for 'Send_MIDINoteOn_2'; have 'int()'
+   68 | r                               Send_MIDINoteOn_2(control);
+      |                                 ^~~~~~~~~~~~~~~~~
+In file included from ../Core/Src/MIDI/MIDI.c:8:
+../Core/Inc/MIDI/MIDI.h:19:6: note: previous declaration of 'Send_MIDINoteOn_2' with type 'void(uint8_t)' {aka 'void(unsigned char)'}
+   19 | void Send_MIDINoteOn_2(uint8_t control);
+      |      ^~~~~~~~~~~~~~~~~
+../Core/Src/MIDI/MIDI.c: At top level:
+../Core/Src/MIDI/MIDI.c:227:6: error: conflicting types for 'Send_MIDINoteOn_2'; have 'void(uint8_t)' {aka 'void(unsigned char)'}
+  227 | void Send_MIDINoteOn_2(uint8_t control){
+      |      ^~~~~~~~~~~~~~~~~
+../Core/Src/MIDI/MIDI.c:68:33: note: previous declaration of 'Send_MIDINoteOn_2' with type 'int()'
+   68 | r                               Send_MIDINoteOn_2(control);
+      |                                 ^~~~~~~~~~~~~~~~~
+make: *** [Core/Src/MIDI/subdir.mk:19: Core/Src/MIDI/MIDI.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+19:23:08 **** Incremental Build of configuration Debug for project version2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/MIDI/MIDI.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/MIDI/MIDI.d" -MT"Core/Src/MIDI/MIDI.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/MIDI/MIDI.o"
+arm-none-eabi-gcc -o "version2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\andep\STM32CubeIDE\workspace_TFG\version2\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="version2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: version2.elf
+ 
+arm-none-eabi-size   version2.elf 
+arm-none-eabi-objdump -h -S  version2.elf  > "version2.list"
+   text	   data	    bss	    dec	    hex	filename
+  12076	     20	   1708	  13804	   35ec	version2.elf
+Finished building: default.size.stdout
+ 
+Finished building: version2.list
+ 
+19:23:11 **** Incremental Build of configuration Debug for project version2 ****
+make -j8 all 
+arm-none-eabi-size   version2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  12076	     20	   1708	  13804	   35ec	version2.elf
+Finished building: default.size.stdout
+ 
+19:23:47 **** Incremental Build of configuration Debug for project version2 ****
+make -j8 all 
+arm-none-eabi-size   version2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  12076	     20	   1708	  13804	   35ec	version2.elf
+Finished building: default.size.stdout
+ 
+19:26:10 **** Incremental Build of configuration Debug for project version2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/MIDI/MIDI.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/MIDI/MIDI.d" -MT"Core/Src/MIDI/MIDI.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/MIDI/MIDI.o"
+arm-none-eabi-gcc -o "version2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\andep\STM32CubeIDE\workspace_TFG\version2\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="version2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: version2.elf
+ 
+arm-none-eabi-size   version2.elf 
+arm-none-eabi-objdump -h -S  version2.elf  > "version2.list"
+   text	   data	    bss	    dec	    hex	filename
+  12152	     20	   1708	  13880	   3638	version2.elf
+Finished building: default.size.stdout
+ 
+Finished building: version2.list
+ 
+19:27:49 **** Incremental Build of configuration Debug for project version2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/MIDI/MIDI.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/MIDI/MIDI.d" -MT"Core/Src/MIDI/MIDI.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/MIDI/MIDI.o"
+arm-none-eabi-gcc -o "version2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\andep\STM32CubeIDE\workspace_TFG\version2\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="version2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: version2.elf
+ 
+arm-none-eabi-size   version2.elf 
+arm-none-eabi-objdump -h -S  version2.elf  > "version2.list"
+   text	   data	    bss	    dec	    hex	filename
+  12108	     20	   1724	  13852	   361c	version2.elf
+Finished building: default.size.stdout
+ 
+Finished building: version2.list
+ 
+19:32:27 **** Incremental Build of configuration Debug for project version2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/MIDI/MIDI.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/MIDI/MIDI.d" -MT"Core/Src/MIDI/MIDI.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/MIDI/MIDI.o"
+arm-none-eabi-gcc -o "version2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\andep\STM32CubeIDE\workspace_TFG\version2\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="version2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: version2.elf
+ 
+arm-none-eabi-size   version2.elf 
+arm-none-eabi-objdump -h -S  version2.elf  > "version2.list"
+   text	   data	    bss	    dec	    hex	filename
+  12112	     20	   1724	  13856	   3620	version2.elf
+Finished building: default.size.stdout
+ 
+Finished building: version2.list
+ 
+19:34:03 **** Incremental Build of configuration Debug for project version2 ****
+make -j8 all 
+arm-none-eabi-size   version2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  12112	     20	   1724	  13856	   3620	version2.elf
+Finished building: default.size.stdout
+ 
+19:36:47 **** Incremental Build of configuration Debug for project version2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/MIDI/MIDI.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/MIDI/MIDI.d" -MT"Core/Src/MIDI/MIDI.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/MIDI/MIDI.o"
+arm-none-eabi-gcc -o "version2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\andep\STM32CubeIDE\workspace_TFG\version2\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="version2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: version2.elf
+ 
+arm-none-eabi-size   version2.elf 
+arm-none-eabi-objdump -h -S  version2.elf  > "version2.list"
+   text	   data	    bss	    dec	    hex	filename
+  12116	     20	   1740	  13876	   3634	version2.elf
+Finished building: default.size.stdout
+ 
+Finished building: version2.list
+ 
+19:36:50 **** Incremental Build of configuration Debug for project version2 ****
+make -j8 all 
+arm-none-eabi-size   version2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  12116	     20	   1740	  13876	   3634	version2.elf
+Finished building: default.size.stdout
+ 
+12:29:49 **** Incremental Build of configuration Debug for project version2 ****
+make -j8 all 
+arm-none-eabi-size   version2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  12116	     20	   1740	  13876	   3634	version2.elf
+Finished building: default.size.stdout
+ 
+12:37:12 **** Incremental Build of configuration Debug for project version2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/MIDI/MIDI.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/MIDI/MIDI.d" -MT"Core/Src/MIDI/MIDI.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/MIDI/MIDI.o"
+arm-none-eabi-gcc -o "version2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\andep\STM32CubeIDE\workspace_TFG\version2\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="version2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: version2.elf
+ 
+arm-none-eabi-size   version2.elf 
+arm-none-eabi-objdump -h -S  version2.elf  > "version2.list"
+   text	   data	    bss	    dec	    hex	filename
+  12116	     20	   1740	  13876	   3634	version2.elf
 Finished building: default.size.stdout
  
 Finished building: version2.list

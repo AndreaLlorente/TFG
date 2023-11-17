@@ -109,10 +109,11 @@ int main(void)
   char msg[128] = {'\0'};
   while (1)
   {
-	  WriteControl(2);
-	  sprintf(msg, "La lectura es %d \n\r",HAL_GPIO_ReadPin(GPIOA, I1_Pin));
-	  printf(msg);
-//	  BucleMIDI();
+//	  WriteControl(2);
+//	  sprintf(msg, "La lectura es %d \n\r",HAL_GPIO_ReadPin(GPIOA, I1_Pin));
+//	  printf(msg);
+
+	  BucleMIDI();
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

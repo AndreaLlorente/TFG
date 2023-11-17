@@ -7,6 +7,7 @@
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="resultado_anterior"/>
 			<item value="&#x09;if (resultado_anterior[control] != 1){"/>
 		</list>
 		<list key="replacehistory">

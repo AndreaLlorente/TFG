@@ -42,7 +42,7 @@ uint8_t IdentifyNote(uint8_t control){ //Comprobar la entrada del MUX
 	WriteControl(control);
 	bool pulsado1 = false;
 	pulsado1 = HAL_GPIO_ReadPin(GPIOA, I1_Pin);
-	pulsado2 = HAL_GPIO_ReadPin(GPIOA, I2_Pin);
+//	pulsado2 = HAL_GPIO_ReadPin(GPIOA, I2_Pin);
 	return pulsado1;
 }
 

@@ -17,62 +17,35 @@
 extern UART_HandleTypeDef huart2;
 
 
-//void BucleMIDI(){
-//	uint8_t resultado_anterior[16] = {0};
-//	for (uint8_t control=0; control<16; control++){ //Recorro 16 valores de control del mux: 0000 0000 hasta 0000 1111
-//		uint8_t pulsado = 0;
-//		pulsado = IdentifyNote(control); //Por cada valor de control del Mux compruebo la entrada del Mux
-//		if (pulsado & 0x01){ //compruebo si en la primera fila (entrada) se ha pulsado
-//			printf("Se ha pulsado una tecla de la fila 1");
-//			if (resultado_anterior[control] != 1){
-//				Send_MIDINoteOn_1(control);
-//				resultado_anterior[control] = 1;
-//			}else{
-//				Send_MIDINoteOff_1(control);
-//				resultado_anterior[control] = 0;
-//			}
-//		}
-//		if (pulsado & 0x02){ //compruebo si en la segunda fila (entrada) se ha pulsado
-//			printf("Se ha pulsado una tecla de la fila 2");
-//			if (resultado_anterior[control] != 1){
-//				Send_MIDINoteOn_2(control);
-//				resultado_anterior[control] = 1;
-//			}else{
-//				Send_MIDINoteOff_2(control);
-//				resultado_anterior[control] = 0;
-//			}
-//		}
-//
-//	}
-//}
+uint8_t pulsado_anterior1[16] = {0};
+uint8_t pulsado_anterior2[16] = {0};
 
 void BucleMIDI(){
-	uint8_t resultado_anterior[16] = {0};
 	for (uint8_t control=0; control<16; control++){ //Recorro 16 valores de control del mux: 0000 0000 hasta 0000 1111
 		uint8_t pulsado = 0;
 		pulsado = IdentifyNote(control); //Por cada valor de control del Mux compruebo la entrada del Mux
 		if (pulsado & 0x01){ //compruebo si en la primera fila (entrada) se ha pulsado
-			printf("Se ha pulsado una tecla de la fila 1");
-			if (resultado_anterior[control] != 1){
+			if (pulsado_anterior1[control] != 1){
 				Send_MIDINoteOn_1(control);
-				resultado_anterior[control] = 1;
+				pulsado_anterior1[control] = 1;
 			}
-		}else{
-			if (resultado_anterior[control] == 1){
+		}
+		if (!(pulsado & 0x01)){
+			if (pulsado_anterior1[control] == 1){
 				Send_MIDINoteOff_1(control);
-				resultado_anterior[control] = 0;
+				pulsado_anterior1[control] = 0;
 			}
 		}
 		if (pulsado & 0x02){ //compruebo si en la segunda fila (entrada) se ha pulsado
-			printf("Se ha pulsado una tecla de la fila 2");
-			if (resultado_anterior[control] != 1){
+			if (pulsado_anterior2[control] != 1){
 				Send_MIDINoteOn_2(control);
-				resultado_anterior[control] = 1;
+				pulsado_anterior2[control] = 1;
 			}
-		}else{
-			if (resultado_anterior[control] == 1){
+		}
+		if (!(pulsado & 0x02)){
+			if (pulsado_anterior2[control] == 1){
 				Send_MIDINoteOff_2(control);
-				resultado_anterior[control] = 0;
+				pulsado_anterior2[control] = 0;
 			}
 		}
 	}
@@ -80,12 +53,13 @@ void BucleMIDI(){
 
 uint8_t IdentifyNote(uint8_t control){ //Comprobar la entrada del MUX (2 entradas)
 	WriteControl(control);
+	HAL_Delay(50);
 	uint8_t pulsado = 0;
-	bool pulsado1 = false;
-	bool pulsado2 = false;
+	uint8_t pulsado1 = false;
+	uint8_t pulsado2 = false;
 	pulsado1 = HAL_GPIO_ReadPin(GPIOA, I1_Pin);  //Comprobar si se ha pulsado una nota en la fila 1
 	pulsado2 = HAL_GPIO_ReadPin(GPIOA, I2_Pin); //Comprobar si se ha pulsado una nota en la fila 2
-	pulsado = (pulsado1 & 0x01) | (pulsado2 & 0x02);
+	pulsado = ((pulsado1 & 0x01) | (pulsado2<<1 & 0x02));
 	return pulsado;
 }
 
