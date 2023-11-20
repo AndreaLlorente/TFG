@@ -18,32 +18,32 @@
 extern UART_HandleTypeDef huart3; //UART para enviar el codigo MIDI al sintetizador
 
 
-uint8_t pulsado_anterior1[16] = {0};
+uint8_t pulsado_anterior1[16] = {0}; //Guardamos el resultado anterior de cada valor de control de cada fila
 uint8_t pulsado_anterior2[16] = {0};
 
 void BucleMIDI(){
 	for (uint8_t control=0; control<16; control++){ //Recorro 16 valores de control del mux: 0000 0000 hasta 0000 1111
 		uint8_t pulsado = 0;
 		pulsado = IdentifyNote(control); //Por cada valor de control del Mux compruebo la entrada del Mux
-		if (pulsado & 0x01){ //compruebo si en la primera fila (entrada) se ha pulsado
+		if (pulsado & 0x01){ //compruebo si en la fila 1 (entrada) se ha pulsado
 			if (pulsado_anterior1[control] != 1){
 				Send_MIDINoteOn_1(control);
 				pulsado_anterior1[control] = 1;
 			}
 		}
-		if (!(pulsado & 0x01)){
+		if (!(pulsado & 0x01)){ //compruebo si en la fila 1 (entrada) se ha dejado de pulsar
 			if (pulsado_anterior1[control] == 1){
 				Send_MIDINoteOff_1(control);
 				pulsado_anterior1[control] = 0;
 			}
 		}
-		if (pulsado & 0x02){ //compruebo si en la segunda fila (entrada) se ha pulsado
+		if (pulsado & 0x02){ //compruebo si en la fila 1 (entrada) se ha pulsado
 			if (pulsado_anterior2[control] != 1){
 				Send_MIDINoteOn_2(control);
 				pulsado_anterior2[control] = 1;
 			}
 		}
-		if (!(pulsado & 0x02)){
+		if (!(pulsado & 0x02)){ //compruebo si en la fila 2 (entrada) se ha dejado de pulsar
 			if (pulsado_anterior2[control] == 1){
 				Send_MIDINoteOff_2(control);
 				pulsado_anterior2[control] = 0;
@@ -54,7 +54,7 @@ void BucleMIDI(){
 
 uint8_t IdentifyNote(uint8_t control){ //Comprobar la entrada del MUX (2 entradas)
 	WriteControl(control);
-	HAL_Delay(30);
+	HAL_Delay(0.015); //15 ns, tiempo de propagacion del MUX necesario
 	uint8_t pulsado = 0;
 	uint8_t pulsado1 = false;
 	uint8_t pulsado2 = false;
@@ -64,7 +64,7 @@ uint8_t IdentifyNote(uint8_t control){ //Comprobar la entrada del MUX (2 entrada
 	return pulsado;
 }
 
-void WriteControl(uint8_t control){ //Escribir en el gpio correspondiente los valores de control del MUX
+void WriteControl(uint8_t control){ //Escribir en el GPIO correspondiente los valores de control del MUX
 	uint8_t S0 = control & 0x01; //0000 0001
 	uint8_t S1 = control & 0x02; //0000 0010
 	uint8_t S2 = control & 0x04; //0000 0100
@@ -80,7 +80,7 @@ void Send_MIDINoteOn_1(uint8_t control){ //Enviar código MIDI NoteOn de la fila
 	uint8_t MIDI_C3[3] = {0x90, 0x30, 0x7F};
 	uint8_t MIDI_Csos3[3] = {0x90, 0x31, 0x7F};
 	uint8_t MIDI_D3[3] = {0x90, 0x32, 0x7F};
-	uint8_t MIDI_Dsos3[3] = {0x33, 0x33, 0x7F};
+	uint8_t MIDI_Dsos3[3] = {0x90, 0x33, 0x7F};
 	uint8_t MIDI_E3[3] = {0x90, 0x34, 0x7F};
 	uint8_t MIDI_F3[3] = {0x90, 0x35, 0x7F};
 	uint8_t MIDI_Fsos3[3] = {0x90, 0x36, 0x7F};
@@ -141,7 +141,7 @@ void Send_MIDINoteOff_1(uint8_t control){ //Enviar código MIDI NoteOff de la fi
 	uint8_t MIDI_C3[3] = {0x90, 0x30, 0x00};
 	uint8_t MIDI_Csos3[3] = {0x90, 0x31, 0x00};
 	uint8_t MIDI_D3[3] = {0x90, 0x32, 0x00};
-	uint8_t MIDI_Dsos3[3] = {0x33, 0x33, 0x00};
+	uint8_t MIDI_Dsos3[3] = {0x90, 0x33, 0x00};
 	uint8_t MIDI_E3[3] = {0x90, 0x34, 0x00};
 	uint8_t MIDI_F3[3] = {0x90, 0x35, 0x00};
 	uint8_t MIDI_Fsos3[3] = {0x90, 0x36, 0x00};

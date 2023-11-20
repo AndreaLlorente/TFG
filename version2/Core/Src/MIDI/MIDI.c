@@ -53,7 +53,7 @@ void BucleMIDI(){
 
 uint8_t IdentifyNote(uint8_t control){ //Comprobar la entrada del MUX (2 entradas)
 	WriteControl(control);
-	HAL_Delay(30);
+	HAL_Delay(0.015);
 	uint8_t pulsado = 0;
 	uint8_t pulsado1 = false;
 	uint8_t pulsado2 = false;
