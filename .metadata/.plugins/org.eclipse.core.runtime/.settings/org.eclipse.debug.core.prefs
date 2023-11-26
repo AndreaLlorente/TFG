@@ -5,4 +5,4 @@
 //org.eclipse.debug.core.PREFERRED_DELEGATES/org.eclipse.cdt.launch.remoteApplicationLaunchType=org.eclipse.rse.remotecdt.dsf.debug,debug,;
 eclipse.preferences.version=1
 org.eclipse.debug.core.PREF_BREAKPOINT_MANAGER_ENABLED_STATE=true
-prefWatchExpressions=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\r\n<watchExpressions>\r\n    <expression enabled\="true" text\="control"/>\r\n    <expression enabled\="true" text\="pulsado2"/>\r\n    <expression enabled\="true" text\="pulsado"/>\r\n    <expression enabled\="true" text\="pulsado2&lt;&lt;1 &amp; 0x02"/>\r\n    <expression enabled\="true" text\="pulsado &amp; 0x02"/>\r\n    <expression enabled\="true" text\="pulsado &amp; 0x01"/>\r\n</watchExpressions>\r\n
+prefWatchExpressions=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\r\n<watchExpressions>\r\n    <expression enabled\="true" text\="volumen"/>\r\n    <expression enabled\="true" text\="pulsado &amp; 0x04"/>\r\n    <expression enabled\="true" text\="control"/>\r\n</watchExpressions>\r\n

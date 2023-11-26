@@ -110,6 +110,7 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
 //  char msg[128] = {'\0'};
+//  uint8_t MIDI_C3[3] = {0x90, 0x30,0x00};
   while (1)
   {
 //	  WriteControl(9);
@@ -118,6 +119,7 @@ int main(void)
 //	  printf(msg);
 
 	  BucleMIDI();
+//	  HAL_UART_Transmit(&huart3, (uint8_t*)&MIDI_C3, 3, 100);
 
     /* USER CODE END WHILE */
 

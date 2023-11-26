@@ -354,7 +354,7 @@ Disassembly of section .text:
 08000500 <BucleMIDI>:
 
 
-uint8_t pulsado_anterior1[16] = {0};
+uint8_t pulsado_anterior1[16] = {0}; //Guardamos el resultado anterior de cada valor de control de cada fila
 uint8_t pulsado_anterior2[16] = {0};
 
 void BucleMIDI(){
@@ -492,7 +492,7 @@ uint8_t IdentifyNote(uint8_t control){ //Comprobar la entrada del MUX (2 entrada
  80005d6:	79fb      	ldrb	r3, [r7, #7]
  80005d8:	4618      	mov	r0, r3
  80005da:	f000 f82b 	bl	8000634 <WriteControl>
-	HAL_Delay(0.015); //30 ns
+	HAL_Delay(0.015); //15 ns, tiempo de propagacion del MUX necesario
  80005de:	2000      	movs	r0, #0
  80005e0:	f000 ff96 	bl	8001510 <HAL_Delay>
 	uint8_t pulsado = 0;
@@ -540,7 +540,7 @@ uint8_t IdentifyNote(uint8_t control){ //Comprobar la entrada del MUX (2 entrada
 
 08000634 <WriteControl>:
 
-void WriteControl(uint8_t control){ //Escribir en el gpio correspondiente los valores de control del MUX
+void WriteControl(uint8_t control){ //Escribir en el GPIO correspondiente los valores de control del MUX
  8000634:	b580      	push	{r7, lr}
  8000636:	b084      	sub	sp, #16
  8000638:	af00      	add	r7, sp, #0
@@ -1967,7 +1967,7 @@ static void MX_USART3_UART_Init(void)
  8001090:	4b11      	ldr	r3, [pc, #68]	; (80010d8 <MX_USART3_UART_Init+0x4c>)
  8001092:	4a12      	ldr	r2, [pc, #72]	; (80010dc <MX_USART3_UART_Init+0x50>)
  8001094:	601a      	str	r2, [r3, #0]
-  huart3.Init.BaudRate = 31250; //MIDI
+  huart3.Init.BaudRate = 31250;
  8001096:	4b10      	ldr	r3, [pc, #64]	; (80010d8 <MX_USART3_UART_Init+0x4c>)
  8001098:	f647 2212 	movw	r2, #31250	; 0x7a12
  800109c:	605a      	str	r2, [r3, #4]

@@ -3423,9 +3423,9 @@ LOAD C:/ST/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
 .debug_str      0x0000000000000000    0xc7e8a
  .debug_str     0x0000000000000000    0xc5d49 ./Core/Src/MIDI/MIDI.o
                                       0xc603c (size before relaxing)
- .debug_str     0x00000000000c5d49      0x3a5 ./Core/Src/main.o
+ .debug_str     0x00000000000c5d49      0x36c ./Core/Src/main.o
                                       0xc619f (size before relaxing)
- .debug_str     0x00000000000c60ee       0x83 ./Core/Src/stm32f4xx_hal_msp.o
+ .debug_str     0x00000000000c60b5       0xbc ./Core/Src/stm32f4xx_hal_msp.o
                                       0xc284f (size before relaxing)
  .debug_str     0x00000000000c6171      0x101 ./Core/Src/stm32f4xx_it.o
                                       0xc229b (size before relaxing)

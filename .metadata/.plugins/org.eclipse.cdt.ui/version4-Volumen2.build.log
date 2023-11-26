@@ -1,0 +1,17 @@
+13:46:10 **** Incremental Build of configuration Debug for project version4-Volumen2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/MIDI/MIDI.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/MIDI/MIDI.d" -MT"Core/Src/MIDI/MIDI.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/MIDI/MIDI.o"
+arm-none-eabi-gcc -o "version4-Volumen2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\andep\STM32CubeIDE\workspace_TFG\version4-Volumen2\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="version4-Volumen2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: version4-Volumen2.elf
+ 
+arm-none-eabi-size   version4-Volumen2.elf 
+arm-none-eabi-objdump -h -S  version4-Volumen2.elf  > "version4-Volumen2.list"
+   text	   data	    bss	    dec	    hex	filename
+  12244	     24	   1744	  14012	   36bc	version4-Volumen2.elf
+Finished building: default.size.stdout
+ 
+Finished building: version4-Volumen2.list
+ 
+
+13:46:11 Build Finished. 0 errors, 0 warnings. (took 763ms)
+
