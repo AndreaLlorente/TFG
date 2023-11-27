@@ -138,26 +138,24 @@ void vibrato(){
 
 
 void Send_MIDINoteOn_1_WithVolume(uint8_t control){ //Enviar código MIDI NoteOn de la fila 1 correspondiente a cada nota en funcion del codigo de control
-	//Mensajes de MIDI NoteON: canal MIDI 1, Sol2 a La3
+	//Mensajes de MIDI NoteON: canal MIDI 1, octava 3 y valocidad máxima
 
-//	uint8_t MIDI_G2[3] = {0x90, 0x2B, volumen};
-//	uint8_t MIDI_Gs2[3] = {0x90, 0x2C, volumen};
-//	uint8_t MIDI_A2[3] = {0x90, 0x2D, volumen};
-//	uint8_t MIDI_As2[3] = {0x90, 0x2E, volumen};
-//	uint8_t MIDI_B2[3] = {0x90, 0x2F, volumen};
 //	uint8_t MIDI_C3[3] = {0x90, 0x30, volumen};
-//	uint8_t MIDI_Cs3[3] = {0x90, 0x31, volumen};
+//	uint8_t MIDI_Csos3[3] = {0x90, 0x31, volumen};
 //	uint8_t MIDI_D3[3] = {0x90, 0x32, volumen};
-//	uint8_t MIDI_Ds3[3] = {0x90, 0x33, volumen};
+//	uint8_t MIDI_Dsos3[3] = {0x90, 0x33, volumen};
 //	uint8_t MIDI_E3[3] = {0x90, 0x34, volumen};
 //	uint8_t MIDI_F3[3] = {0x90, 0x35, volumen};
-//	uint8_t MIDI_Fs3[3] = {0x90, 0x36, volumen};
+//	uint8_t MIDI_Fsos3[3] = {0x90, 0x36, volumen};
 //	uint8_t MIDI_G3[3] = {0x90, 0x37, volumen};
-//	uint8_t MIDI_Gs3[3] = {0x90, 0x38, volumen};
+//	uint8_t MIDI_Gsos3[3] = {0x90, 0x38, volumen};
 //	uint8_t MIDI_A3[3] = {0x90, 0x39, volumen};
+//	uint8_t MIDI_Asos3[3] = {0x90, 0x3A, volumen};
+//	uint8_t MIDI_B3[3] = {0x90, 0x3B, volumen};
+//	uint8_t MIDI_C4[3] = {0x90, 0x3C, volumen};
 
-	if (control <= 14){
-		uint8_t MIDI[3] = {0x90, 0x2B + control, volumen};
+	if (control <= 12){
+		uint8_t MIDI[3] = {0x90, 0x30 + control, volumen};
 		HAL_UART_Transmit(&huart2, MIDI, 3, 100);
 	}
 }
@@ -166,49 +164,45 @@ void Send_MIDINoteOn_1_WithVolume(uint8_t control){ //Enviar código MIDI NoteOn
 void Send_MIDINoteOff_1(uint8_t control){ //Enviar código MIDI NoteOff de la fila 1 correspondiente a cada nota en función del código de control
 	//Mensajes de MIDI NoteOff -> velocidad 0
 
-//	uint8_t MIDI_G2[3] = {0x90, 0x2B, volumen};
-//	uint8_t MIDI_Gs2[3] = {0x90, 0x2C, volumen};
-//	uint8_t MIDI_A2[3] = {0x90, 0x2D, volumen};
-//	uint8_t MIDI_As2[3] = {0x90, 0x2E, volumen};
-//	uint8_t MIDI_B2[3] = {0x90, 0x2F, volumen};
-//	uint8_t MIDI_C3[3] = {0x90, 0x30, volumen};
-//	uint8_t MIDI_Cs3[3] = {0x90, 0x31, volumen};
-//	uint8_t MIDI_D3[3] = {0x90, 0x32, volumen};
-//	uint8_t MIDI_Ds3[3] = {0x90, 0x33, volumen};
-//	uint8_t MIDI_E3[3] = {0x90, 0x34, volumen};
-//	uint8_t MIDI_F3[3] = {0x90, 0x35, volumen};
-//	uint8_t MIDI_Fs3[3] = {0x90, 0x36, volumen};
-//	uint8_t MIDI_G3[3] = {0x90, 0x37, volumen};
-//	uint8_t MIDI_Gs3[3] = {0x90, 0x38, volumen};
-//	uint8_t MIDI_A3[3] = {0x90, 0x39, volumen};
+//	uint8_t MIDI_C3[3] = {0x90, 0x30, 0x00};
+//	uint8_t MIDI_Csos3[3] = {0x90, 0x31, 0x00};
+//	uint8_t MIDI_D3[3] = {0x90, 0x32, 0x00};
+//	uint8_t MIDI_Dsos3[3] = {0x90, 0x33, 0x00};
+//	uint8_t MIDI_E3[3] = {0x90, 0x34, 0x00};
+//	uint8_t MIDI_F3[3] = {0x90, 0x35, 0x00};
+//	uint8_t MIDI_Fsos3[3] = {0x90, 0x36, 0x00};
+//	uint8_t MIDI_G3[3] = {0x90, 0x37, 0x00};
+//	uint8_t MIDI_Gsos3[3] = {0x90, 0x38, 0x00};
+//	uint8_t MIDI_A3[3] = {0x90, 0x39, 0x00};
+//	uint8_t MIDI_Asos3[3] = {0x90, 0x3A, 0x00};
+//	uint8_t MIDI_B3[3] = {0x90, 0x3B, 0x00};
+//	uint8_t MIDI_C4[3] = {0x90, 0x3C, 0x00};
 
-	if (control <= 14){
-		uint8_t MIDI[3] = {0x90, 0x2B + control, 0x00};
+	if (control <= 12){
+		uint8_t MIDI[3] = {0x90, 0x30 + control, 0x00};
 		HAL_UART_Transmit(&huart2, MIDI, 3, 100);
 	}
 }
 
 void Send_MIDINoteOn_2WithVolume(uint8_t control){
-	//Mensajes de MIDI NoteON: canal MIDI 1, Las3 a Do5
+	//Mensajes de MIDI NoteON: canal MIDI 1, octava 4 y valocidad máxima
 
-//	uint8_t MIDI_As3[3] = {0x90, 0x3A, 0x00};
-//	uint8_t MIDI_B3[3] = {0x90, 0x3B, 0x00};
-//	uint8_t MIDI_C4[3] = {0x90, 0x3C, 0x00};
-//	uint8_t MIDI_Cs4[3] = {0x90, 0x3D, 0x00};
-//	uint8_t MIDI_D4[3] = {0x90, 0x3E, 0x00};
-//	uint8_t MIDI_Ds4[3] = {0x90, 0x3F, 0x00};
-//	uint8_t MIDI_E4[3] = {0x90, 0x40, 0x00};
-//	uint8_t MIDI_F4[3] = {0x90, 0x41, 0x00};
-//	uint8_t MIDI_Fs4[3] = {0x90, 0x42, 0x00};
-//	uint8_t MIDI_G4[3] = {0x90, 0x43, 0x00};
-//	uint8_t MIDI_Gs4[3] = {0x90, 0x44, 0x00};
-//	uint8_t MIDI_A4[3] = {0x90, 0x45, 0x00};
-//	uint8_t MIDI_As4[3] = {0x90, 0x46, 0x00};
-//	uint8_t MIDI_B4[3] = {0x90, 0x47, 0x00};
-//	uint8_t MIDI_C5[3] = {0x90, 0x48, 0x00};
+//	uint8_t MIDI_C4[3] = {0x90, 0x3C, volumen};
+//	uint8_t MIDI_Csos4[3] = {0x90, 0x3D, volumen};
+//	uint8_t MIDI_D4[3] = {0x90, 0x3E, volumen};
+//	uint8_t MIDI_Dsos4[3] = {0x90, 0x3F, volumen};
+//	uint8_t MIDI_E4[3] = {0x90, 0x40, volumen};
+//	uint8_t MIDI_F4[3] = {0x90, 0x41, volumen};
+//	uint8_t MIDI_Fsos4[3] = {0x90, 0x42, volumen};
+//	uint8_t MIDI_G4[3] = {0x90, 0x43, volumen};
+//	uint8_t MIDI_Gsos4[3] = {0x90, 0x44, volumen};
+//	uint8_t MIDI_A4[3] = {0x90, 0x45, volumen};
+//	uint8_t MIDI_Asos4[3] = {0x90, 0x46, volumen};
+//	uint8_t MIDI_B4[3] = {0x90, 0x47, volumen};
+//	uint8_t MIDI_C5[3] = {0x90, 0x48, volumen};
 
-	if (control <= 14){
-		uint8_t MIDI[3] = {0x90, 0x3A + control, volumen};
+	if (control <= 12){
+		uint8_t MIDI[3] = {0x90, 0x3C + control, volumen};
 		HAL_UART_Transmit(&huart2, MIDI, 3, 100);
 	}
 }
@@ -216,24 +210,22 @@ void Send_MIDINoteOn_2WithVolume(uint8_t control){
 void Send_MIDINoteOff_2(uint8_t control){
 	//Mensajes de MIDI NoteOff -> velocidad 0
 
-//	uint8_t MIDI_As3[3] = {0x90, 0x3A, 0x00};
-//	uint8_t MIDI_B3[3] = {0x90, 0x3B, 0x00};
 //	uint8_t MIDI_C4[3] = {0x90, 0x3C, 0x00};
-//	uint8_t MIDI_Cs4[3] = {0x90, 0x3D, 0x00};
+//	uint8_t MIDI_Csos4[3] = {0x90, 0x3D, 0x00};
 //	uint8_t MIDI_D4[3] = {0x90, 0x3E, 0x00};
-//	uint8_t MIDI_Ds4[3] = {0x90, 0x3F, 0x00};
+//	uint8_t MIDI_Dsos4[3] = {0x90, 0x3F, 0x00};
 //	uint8_t MIDI_E4[3] = {0x90, 0x40, 0x00};
 //	uint8_t MIDI_F4[3] = {0x90, 0x41, 0x00};
-//	uint8_t MIDI_Fs4[3] = {0x90, 0x42, 0x00};
+//	uint8_t MIDI_Fsos4[3] = {0x90, 0x42, 0x00};
 //	uint8_t MIDI_G4[3] = {0x90, 0x43, 0x00};
-//	uint8_t MIDI_Gs4[3] = {0x90, 0x44, 0x00};
+//	uint8_t MIDI_Gsos4[3] = {0x90, 0x44, 0x00};
 //	uint8_t MIDI_A4[3] = {0x90, 0x45, 0x00};
-//	uint8_t MIDI_As4[3] = {0x90, 0x46, 0x00};
+//	uint8_t MIDI_Asos4[3] = {0x90, 0x46, 0x00};
 //	uint8_t MIDI_B4[3] = {0x90, 0x47, 0x00};
 //	uint8_t MIDI_C5[3] = {0x90, 0x48, 0x00};
 
-	if (control <= 14){
-		uint8_t MIDI[3] = {0x90, 0x3A + control, 0x00};
+	if (control <= 12){
+		uint8_t MIDI[3] = {0x90, 0x3C + control, 0x00};
 		HAL_UART_Transmit(&huart2, MIDI, 3, 100);
 	}
 }

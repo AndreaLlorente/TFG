@@ -138,7 +138,7 @@ void vibrato(){
 
 
 void Send_MIDINoteOn_1_WithVolume(uint8_t control){ //Enviar código MIDI NoteOn de la fila 1 correspondiente a cada nota en funcion del codigo de control
-	//Mensajes de MIDI NoteON: canal MIDI 1, Sol2 a La3
+	//Mensajes de MIDI NoteON: canal MIDI 1, octava 3 y valocidad máxima
 
 //	uint8_t MIDI_G2[3] = {0x90, 0x2B, volumen};
 //	uint8_t MIDI_Gs2[3] = {0x90, 0x2C, volumen};
@@ -156,7 +156,7 @@ void Send_MIDINoteOn_1_WithVolume(uint8_t control){ //Enviar código MIDI NoteOn
 //	uint8_t MIDI_Gs3[3] = {0x90, 0x38, volumen};
 //	uint8_t MIDI_A3[3] = {0x90, 0x39, volumen};
 
-	if (control <= 14){
+	if (control <= 15){
 		uint8_t MIDI[3] = {0x90, 0x2B + control, volumen};
 		HAL_UART_Transmit(&huart2, MIDI, 3, 100);
 	}
@@ -182,14 +182,14 @@ void Send_MIDINoteOff_1(uint8_t control){ //Enviar código MIDI NoteOff de la fi
 //	uint8_t MIDI_Gs3[3] = {0x90, 0x38, volumen};
 //	uint8_t MIDI_A3[3] = {0x90, 0x39, volumen};
 
-	if (control <= 14){
+	if (control <= 15){
 		uint8_t MIDI[3] = {0x90, 0x2B + control, 0x00};
 		HAL_UART_Transmit(&huart2, MIDI, 3, 100);
 	}
 }
 
 void Send_MIDINoteOn_2WithVolume(uint8_t control){
-	//Mensajes de MIDI NoteON: canal MIDI 1, Las3 a Do5
+	//Mensajes de MIDI NoteON: canal MIDI 1, octava 4 y valocidad máxima
 
 //	uint8_t MIDI_As3[3] = {0x90, 0x3A, 0x00};
 //	uint8_t MIDI_B3[3] = {0x90, 0x3B, 0x00};
@@ -207,7 +207,7 @@ void Send_MIDINoteOn_2WithVolume(uint8_t control){
 //	uint8_t MIDI_B4[3] = {0x90, 0x47, 0x00};
 //	uint8_t MIDI_C5[3] = {0x90, 0x48, 0x00};
 
-	if (control <= 14){
+	if (control <= 12){
 		uint8_t MIDI[3] = {0x90, 0x3A + control, volumen};
 		HAL_UART_Transmit(&huart2, MIDI, 3, 100);
 	}
@@ -232,8 +232,8 @@ void Send_MIDINoteOff_2(uint8_t control){
 //	uint8_t MIDI_B4[3] = {0x90, 0x47, 0x00};
 //	uint8_t MIDI_C5[3] = {0x90, 0x48, 0x00};
 
-	if (control <= 14){
-		uint8_t MIDI[3] = {0x90, 0x3A + control, 0x00};
+	if (control <= 12){
+		uint8_t MIDI[3] = {0x90, 0x3C + control, 0x00};
 		HAL_UART_Transmit(&huart2, MIDI, 3, 100);
 	}
 }
