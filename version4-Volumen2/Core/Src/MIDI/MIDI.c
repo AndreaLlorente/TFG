@@ -51,13 +51,16 @@ void MIDILoop(){
 			}
 		}
 		if ((pulsado & 0x04)){
+			//TODO flanca subida
 			ControlsUser(control);
 		}
+		//TODO flanco bajada
 	}
 }
 
 uint8_t IdentifyRow(uint8_t control){ //Comprobar la entrada del MUX (2 entradas)
 	WriteControl(control);
+	// TODO Hal_Delay toma uint32_t, 0.030 es float, comprobar
 	HAL_Delay(0.030); //15 ns, tiempo de propagacion del MUX necesario
 	uint8_t pulsado = 0;
 	uint8_t pulsado1 = false;
@@ -101,13 +104,13 @@ void ControlsUser(uint8_t control){
 void volumeUp() {
 	if (volumen < 0x7F) {
 		volumen++;
-		HAL_Delay(50);
+//		HAL_Delay(50); Creo que es secundario
 	}
 }
 void volumeDown() {
 	if (volumen > 0X00) {
 		volumen--;
-		HAL_Delay(50);
+//		HAL_Delay(50);
 	}
 }
 
@@ -118,14 +121,14 @@ void vibrato(){
 	uint8_t vibratoOn[3] = {0xB0, 0x01, 0x7F};
 	uint8_t vibratoOff[3] = {0xB0, 0x01, 0x00};
 	uint8_t estado_contacto = HAL_GPIO_ReadPin(I3_GPIO_Port, I3_Pin);
-	if(estado_contacto){
+	if(estado_contacto){												// es True siempre?
 		vibrato_activo = !vibrato_activo;
 		if (vibrato_activo) {
 			HAL_UART_Transmit(&huart3, (uint8_t*)&vibratoOn, 3, 100);
 		} else {
 			HAL_UART_Transmit(&huart3, (uint8_t*)&vibratoOff, 3, 100);
 		}
-		HAL_Delay(123);
+//		HAL_Delay(50);
 	}
 }
 
@@ -213,6 +216,9 @@ void Send_MIDINoteOff_1(uint8_t control){ //Enviar código MIDI NoteOff de la fi
 	uint8_t MIDI_B3[3] = {0x90, 0x3B, 0x00};
 	uint8_t MIDI_C4[3] = {0x90, 0x3C, 0x00};
 
+
+	// TODO
+
 	switch (control)
 	{
 	case 0:
@@ -278,6 +284,8 @@ void Send_MIDINoteOn_2WithVolume(uint8_t control){
 	uint8_t MIDI_Asos4[3] = {0x90, 0x46, volumen};
 	uint8_t MIDI_B4[3] = {0x90, 0x47, volumen};
 	uint8_t MIDI_C5[3] = {0x90, 0x48, volumen};
+
+	// TODO Cambiar por 1 solo MIDI y 1 solo HAL_UART_TRANSMIT
 
 	switch (control)
 	{

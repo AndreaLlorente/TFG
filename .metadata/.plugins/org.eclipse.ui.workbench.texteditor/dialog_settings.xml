@@ -10,11 +10,14 @@
 		<list key="findhistory">
 			<item value="huart3"/>
 			<item value="huart2"/>
+			<item value="TODO"/>
+			<item value="volumeDown"/>
 			<item value="resultado_anterior"/>
 			<item value="&#x09;if (resultado_anterior[control] != 1){"/>
 		</list>
 		<list key="replacehistory">
 			<item value="huart2"/>
+			<item value="huart"/>
 			<item value="huart3"/>
 		</list>
 	</section>

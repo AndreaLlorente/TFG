@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;version4.1/version4.ioc&apos; to &apos;version4-1.ioc&apos;" description="Rename resource &apos;version4.ioc&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="version4.ioc" name="version4-1.ioc" stamp="1701103220518" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;version4-Delay/version4-1.ioc&apos; to &apos;version4-Delay.ioc&apos;" description="Rename resource &apos;version4-1.ioc&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="version4-1.ioc" name="version4-Delay.ioc" stamp="1701103258962" updateReferences="true"/>
+</session>
