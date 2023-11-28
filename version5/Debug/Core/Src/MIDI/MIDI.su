@@ -1,0 +1,13 @@
+../Core/Src/MIDI/MIDI.c:34:6:MIDILoop	16	static
+../Core/Src/MIDI/MIDI.c:77:9:IdentifyRow	24	static
+../Core/Src/MIDI/MIDI.c:93:6:WriteControl	24	static
+../Core/Src/MIDI/MIDI.c:105:6:ControlsUser	16	static
+../Core/Src/MIDI/MIDI.c:128:6:Up	4	static
+../Core/Src/MIDI/MIDI.c:142:6:Down	4	static
+../Core/Src/MIDI/MIDI.c:156:6:Vibrato	16	static
+../Core/Src/MIDI/MIDI.c:168:9:VolumeControl	4	static
+../Core/Src/MIDI/MIDI.c:172:9:Octavacion	4	static
+../Core/Src/MIDI/MIDI.c:178:6:Send_MIDINoteOn_1	24	static
+../Core/Src/MIDI/MIDI.c:204:6:Send_MIDINoteOff_1	24	static
+../Core/Src/MIDI/MIDI.c:229:6:Send_MIDINoteOn_2	24	static
+../Core/Src/MIDI/MIDI.c:254:6:Send_MIDINoteOff_2	24	static
