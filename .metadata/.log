@@ -9445,3 +9445,36 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
 !ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2023-11-28 21:05:29.341
 !MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2023-11-29 11:03:14.883 -----------------------------------------------
+eclipse.buildId=Version 1.13.2
+java.version=17.0.6
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=es_ES
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2023-11-29 11:03:43.295
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2023-11-29 11:03:43.300
+!MESSAGE Log4j2 initialized with config file C:\Users\andep\STM32CubeIDE\workspace_TFG\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2023-11-29 11:03:47.617
+!MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2023-12-02 22:22:59.133 -----------------------------------------------
+eclipse.buildId=Version 1.13.2
+java.version=17.0.6
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=es_ES
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2023-12-02 22:23:26.646
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2023-12-02 22:23:26.654
+!MESSAGE Log4j2 initialized with config file C:\Users\andep\STM32CubeIDE\workspace_TFG\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2023-12-02 22:23:30.702
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2023-12-02 22:36:29.749
+!MESSAGE Indexed 'version6' (23 sources, 111 headers) in 2.76 sec: 9,898 declarations; 41,797 references; 9 unresolved inclusions; 934 syntax errors; 1,248 unresolved names (2.4%)

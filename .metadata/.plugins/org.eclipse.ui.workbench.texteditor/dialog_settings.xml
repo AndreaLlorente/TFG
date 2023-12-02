@@ -6,10 +6,10 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="huart2"/>
+		<item key="selection" value="huart3"/>
 		<list key="findhistory">
-			<item value="huart3"/>
 			<item value="huart2"/>
+			<item value="huart3"/>
 			<item value="volumen"/>
 			<item value="volume"/>
 			<item value="TODO"/>
@@ -18,8 +18,8 @@
 			<item value="&#x09;if (resultado_anterior[control] != 1){"/>
 		</list>
 		<list key="replacehistory">
-			<item value="huart2"/>
 			<item value="huart3"/>
+			<item value="huart2"/>
 			<item value="volume"/>
 			<item value=""/>
 			<item value="huart"/>
