@@ -159,7 +159,10 @@ void Vibrato(){
 	uint8_t vibratoOn[3] = {0xB0, 0x01, 0x7F}; //MIDI Control Change Modulation wheel (vibrato) al maximo
 	uint8_t vibratoOff[3] = {0xB0, 0x01, 0x00};
 
+	HAL_GPIO_TogglePin(Led3_GPIO_Port, Led3_Pin);
+
 	vibrato_activo = !vibrato_activo; //Conmutamos cada vez que pulsamos para activar o desactivar vibrato
+
 	if (vibrato_activo) {
 		HAL_UART_Transmit(&huart3, (uint8_t*)&vibratoOn, 3, 100);
 	} else {
@@ -168,10 +171,12 @@ void Vibrato(){
 }
 
 uint8_t VolumeControl(){
+	HAL_GPIO_TogglePin(Led1_GPIO_Port, Led1_Pin);
 	volumen_activo = !volumen_activo;
 	return volumen_activo;
 }
 uint8_t Octavacion(){
+	HAL_GPIO_TogglePin(Led2_GPIO_Port, Led2_Pin);
 	octavacion_activo = !octavacion_activo;
 	return octavacion_activo;
 }
