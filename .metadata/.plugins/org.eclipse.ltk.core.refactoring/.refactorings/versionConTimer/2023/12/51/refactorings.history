@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;versionConTimer/version6.ioc&apos; to &apos;versionConTimer.ioc&apos;" description="Rename resource &apos;version6.ioc&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="version6.ioc" name="versionConTimer.ioc" stamp="1702834733610" updateReferences="true"/>
+</session>
