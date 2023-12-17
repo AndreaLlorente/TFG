@@ -16,6 +16,8 @@
 /* Declaración de USART (externa) */
 extern UART_HandleTypeDef huart3; //UART para enviar el codigo MIDI al sintetizador
 
+/* Declaración de TIMER (externo) */
+extern TIM_HandleTypeDef htim1; //Timer necesario para el tiempo de propagacion del Multiplexor
 
 uint8_t pulsado_anterior1[16] = {0}; //Guardamos el resultado anterior de cada valor de control de cada fila
 uint8_t pulsado_anterior2[16] = {0};
@@ -77,12 +79,16 @@ void MIDILoop(){
 	}
 }
 
+void delay (uint16_t delay){ //si ponemos 1=10ns porque nuestro reloj es de 100 MHz
+	__HAL_TIM_SET_COUNTER(&htim1, 0);
+	while(__HAL_TIM_GET_COUNTER(&htim1) < delay);
+}
+
 
 uint8_t IdentifyRow(uint8_t control){ //Comprobar la entrada del MUX (2 entradas)
 	WriteControl(control);
-	// TODO Hal_Delay toma uint32_t, 0.030 es float, comprobar
-	HAL_Delay(0.030); //30 o 15 ns, tiempo de propagacion del MUX necesario
-	//probar a no poner delay??
+//	HAL_Delay(0.030); // Hal_Delay toma uint32_t, 0.030 es float, comprobar
+//	delay(100); //20 ns tiempo de propagacion del MUX necesario
 	uint8_t pulsado = 0;
 	uint8_t pulsado1 = false;
 	uint8_t pulsado2 = false;

@@ -29,6 +29,8 @@ void Send_MIDINoteOn_1(uint8_t control);
 void Send_MIDINoteOn_2(uint8_t control);
 
 
+void delay (uint16_t delay);
+
 #endif /* INC_MIDI_MIDI_H_ */
 
 

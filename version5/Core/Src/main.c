@@ -110,6 +110,7 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
 //  char msg[128] = {'\0'};
+  uint8_t MIDI[3] = {0x90, 0x39, 0x00};
   while (1)
   {
 //	  WriteControl(9);

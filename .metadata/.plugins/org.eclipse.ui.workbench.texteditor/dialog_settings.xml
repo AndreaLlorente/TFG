@@ -6,11 +6,11 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="Led"/>
+		<item key="selection" value="huart3"/>
 		<list key="findhistory">
-			<item value="led"/>
 			<item value="huart2"/>
 			<item value="huart3"/>
+			<item value="led"/>
 			<item value="volumen"/>
 			<item value="volume"/>
 			<item value="TODO"/>
