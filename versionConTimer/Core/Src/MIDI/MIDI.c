@@ -14,7 +14,7 @@
 #include "stdio.h"
 
 /* Declaración de USART (externa) */
-extern UART_HandleTypeDef huart2; //UART para enviar el codigo MIDI al sintetizador
+extern UART_HandleTypeDef huart3; //UART para enviar el codigo MIDI al sintetizador
 
 
 uint8_t pulsado_anterior1[16] = {0}; //Guardamos el resultado anterior de cada valor de control de cada fila
@@ -28,7 +28,6 @@ uint8_t vibrato_activo = 0;
 uint8_t note1 = 0x39;
 uint8_t note2 = 0x48;
 uint8_t octavacion_activo = 0;
-
 uint8_t volumen_activo = 0;
 
 uint8_t volumeMax = 0x7F;
@@ -163,20 +162,24 @@ void Vibrato(){
 	vibrato_activo = !vibrato_activo; //Conmutamos cada vez que pulsamos para activar o desactivar vibrato
 
 	if (vibrato_activo) {
-		HAL_UART_Transmit(&huart2, (uint8_t*)&vibratoOn, 3, 100);
+		HAL_UART_Transmit(&huart3, (uint8_t*)&vibratoOn, 3, 100);
 	} else {
-		HAL_UART_Transmit(&huart2, (uint8_t*)&vibratoOff, 3, 100);
+		HAL_UART_Transmit(&huart3, (uint8_t*)&vibratoOff, 3, 100);
 	}
 }
 
 uint8_t VolumeControl(){
-	HAL_GPIO_TogglePin(Led1_GPIO_Port, Led1_Pin);
-	volumen_activo = !volumen_activo;
+	if(!octavacion_activo){ //mientras este octavacion activo, no se puede activar volumen
+		HAL_GPIO_TogglePin(Led1_GPIO_Port, Led1_Pin);
+		volumen_activo = !volumen_activo;
+	}
 	return volumen_activo;
 }
 uint8_t Octavacion(){
-	HAL_GPIO_TogglePin(Led2_GPIO_Port, Led2_Pin);
-	octavacion_activo = !octavacion_activo;
+	if(!volumen_activo){ //mientras este volumen activo, no se puede activar octavacion
+		HAL_GPIO_TogglePin(Led2_GPIO_Port, Led2_Pin);
+		octavacion_activo = !octavacion_activo;
+	}
 	return octavacion_activo;
 }
 
@@ -202,7 +205,7 @@ void Send_MIDINoteOn_1(uint8_t control){ //Enviar código MIDI NoteOn de la fila
 
 	if (control <= 14){
 		uint8_t MIDI[3] = {0x90, note1 - control, volume};
-		HAL_UART_Transmit(&huart2, MIDI, 3, 100);
+		HAL_UART_Transmit(&huart3, MIDI, 3, 100);
 	}
 }
 
@@ -228,7 +231,7 @@ void Send_MIDINoteOff_1(uint8_t control){ //Enviar código MIDI NoteOff de la fi
 
 	if (control <= 14){
 		uint8_t MIDI[3] = {0x90, note1 - control, 0x00};
-		HAL_UART_Transmit(&huart2, MIDI, 3, 100);
+		HAL_UART_Transmit(&huart3, MIDI, 3, 100);
 	}
 }
 
@@ -253,7 +256,7 @@ void Send_MIDINoteOn_2(uint8_t control){
 
 	if (control <= 14){
 		uint8_t MIDI[3] = {0x90, note2 - control, volume};
-		HAL_UART_Transmit(&huart2, MIDI, 3, 100);
+		HAL_UART_Transmit(&huart3, MIDI, 3, 100);
 	}
 }
 
@@ -278,6 +281,6 @@ void Send_MIDINoteOff_2(uint8_t control){
 
 	if (control <= 14){
 		uint8_t MIDI[3] = {0x90, note2 - control, 0x00};
-		HAL_UART_Transmit(&huart2, MIDI, 3, 100);
+		HAL_UART_Transmit(&huart3, MIDI, 3, 100);
 	}
 }
