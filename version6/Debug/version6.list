@@ -29,9 +29,9 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY
  12 .comment      00000043  00000000  00000000  00020040  2**0
                   CONTENTS, READONLY
- 13 .debug_info   000085db  00000000  00000000  00020083  2**0
+ 13 .debug_info   000085dd  00000000  00000000  00020083  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 14 .debug_abbrev 00001767  00000000  00000000  0002865e  2**0
+ 14 .debug_abbrev 00001765  00000000  00000000  00028660  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  15 .debug_aranges 00000708  00000000  00000000  00029dc8  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
@@ -522,10 +522,7 @@ void MIDILoop(){
  800060c:	2000004c 	.word	0x2000004c
 
 08000610 <IdentifyRow>:
-//	for(int i=0; i<delay; i+=18){
-//		__ASM("NOP");
-//	}
-//}
+
 
 uint8_t IdentifyRow(uint8_t control){ //Comprobar la entrada del MUX (2 entradas)
  8000610:	b580      	push	{r7, lr}
@@ -540,7 +537,6 @@ uint8_t IdentifyRow(uint8_t control){ //Comprobar la entrada del MUX (2 entradas
 	HAL_Delay(1); // Hal_Delay toma uint32_t, tiempo de propagacion del MUX necesario
  8000622:	2001      	movs	r0, #1
  8000624:	f000 fd2a 	bl	800107c <HAL_Delay>
-//	delay_us(100); //100us
 	uint8_t pulsado = 0;
  8000628:	2300      	movs	r3, #0
  800062a:	73fb      	strb	r3, [r7, #15]
@@ -916,18 +912,18 @@ void Vibrato(){
  80008b2:	781b      	ldrb	r3, [r3, #0]
  80008b4:	2b00      	cmp	r3, #0
  80008b6:	d006      	beq.n	80008c6 <Vibrato+0x5a>
-		HAL_UART_Transmit(&huart3, (uint8_t*)&vibratoOn, 3, 100);
+		HAL_UART_Transmit(&huart2, (uint8_t*)&vibratoOn, 3, 100);
  80008b8:	1d39      	adds	r1, r7, #4
  80008ba:	2364      	movs	r3, #100	; 0x64
  80008bc:	2203      	movs	r2, #3
  80008be:	480b      	ldr	r0, [pc, #44]	; (80008ec <Vibrato+0x80>)
  80008c0:	f001 fcfb 	bl	80022ba <HAL_UART_Transmit>
 	} else {
-		HAL_UART_Transmit(&huart3, (uint8_t*)&vibratoOff, 3, 100);
+		HAL_UART_Transmit(&huart2, (uint8_t*)&vibratoOff, 3, 100);
 	}
 }
  80008c4:	e005      	b.n	80008d2 <Vibrato+0x66>
-		HAL_UART_Transmit(&huart3, (uint8_t*)&vibratoOff, 3, 100);
+		HAL_UART_Transmit(&huart2, (uint8_t*)&vibratoOff, 3, 100);
  80008c6:	4639      	mov	r1, r7
  80008c8:	2364      	movs	r3, #100	; 0x64
  80008ca:	2203      	movs	r2, #3
@@ -943,7 +939,7 @@ void Vibrato(){
  80008e0:	08002a18 	.word	0x08002a18
  80008e4:	40020400 	.word	0x40020400
  80008e8:	2000005c 	.word	0x2000005c
- 80008ec:	200000a4 	.word	0x200000a4
+ 80008ec:	20000060 	.word	0x20000060
 
 080008f0 <VolumeControl>:
 
@@ -1034,7 +1030,7 @@ void Send_MIDINoteOn_1(uint8_t control){ //Enviar código MIDI NoteOn de la fila
  8000978:	4b07      	ldr	r3, [pc, #28]	; (8000998 <Send_MIDINoteOn_1+0x40>)
  800097a:	781b      	ldrb	r3, [r3, #0]
  800097c:	73bb      	strb	r3, [r7, #14]
-		HAL_UART_Transmit(&huart3, MIDI, 3, 100);
+		HAL_UART_Transmit(&huart2, MIDI, 3, 100);
  800097e:	f107 010c 	add.w	r1, r7, #12
  8000982:	2364      	movs	r3, #100	; 0x64
  8000984:	2203      	movs	r2, #3
@@ -1048,7 +1044,7 @@ void Send_MIDINoteOn_1(uint8_t control){ //Enviar código MIDI NoteOn de la fila
  8000992:	bd80      	pop	{r7, pc}
  8000994:	20000001 	.word	0x20000001
  8000998:	20000000 	.word	0x20000000
- 800099c:	200000a4 	.word	0x200000a4
+ 800099c:	20000060 	.word	0x20000060
 
 080009a0 <Send_MIDINoteOff_1>:
 
@@ -1079,7 +1075,7 @@ void Send_MIDINoteOff_1(uint8_t control){ //Enviar código MIDI NoteOff de la fi
  80009be:	737b      	strb	r3, [r7, #13]
  80009c0:	2300      	movs	r3, #0
  80009c2:	73bb      	strb	r3, [r7, #14]
-		HAL_UART_Transmit(&huart3, MIDI, 3, 100);
+		HAL_UART_Transmit(&huart2, MIDI, 3, 100);
  80009c4:	f107 010c 	add.w	r1, r7, #12
  80009c8:	2364      	movs	r3, #100	; 0x64
  80009ca:	2203      	movs	r2, #3
@@ -1093,7 +1089,7 @@ void Send_MIDINoteOff_1(uint8_t control){ //Enviar código MIDI NoteOff de la fi
  80009d8:	bd80      	pop	{r7, pc}
  80009da:	bf00      	nop
  80009dc:	20000001 	.word	0x20000001
- 80009e0:	200000a4 	.word	0x200000a4
+ 80009e0:	20000060 	.word	0x20000060
 
 080009e4 <Send_MIDINoteOn_2>:
 
@@ -1124,7 +1120,7 @@ void Send_MIDINoteOn_2(uint8_t control){
  8000a04:	4b07      	ldr	r3, [pc, #28]	; (8000a24 <Send_MIDINoteOn_2+0x40>)
  8000a06:	781b      	ldrb	r3, [r3, #0]
  8000a08:	73bb      	strb	r3, [r7, #14]
-		HAL_UART_Transmit(&huart3, MIDI, 3, 100);
+		HAL_UART_Transmit(&huart2, MIDI, 3, 100);
  8000a0a:	f107 010c 	add.w	r1, r7, #12
  8000a0e:	2364      	movs	r3, #100	; 0x64
  8000a10:	2203      	movs	r2, #3
@@ -1138,7 +1134,7 @@ void Send_MIDINoteOn_2(uint8_t control){
  8000a1e:	bd80      	pop	{r7, pc}
  8000a20:	20000002 	.word	0x20000002
  8000a24:	20000000 	.word	0x20000000
- 8000a28:	200000a4 	.word	0x200000a4
+ 8000a28:	20000060 	.word	0x20000060
 
 08000a2c <Send_MIDINoteOff_2>:
 
@@ -1168,7 +1164,7 @@ void Send_MIDINoteOff_2(uint8_t control){
  8000a4a:	737b      	strb	r3, [r7, #13]
  8000a4c:	2300      	movs	r3, #0
  8000a4e:	73bb      	strb	r3, [r7, #14]
-		HAL_UART_Transmit(&huart3, MIDI, 3, 100);
+		HAL_UART_Transmit(&huart2, MIDI, 3, 100);
  8000a50:	f107 010c 	add.w	r1, r7, #12
  8000a54:	2364      	movs	r3, #100	; 0x64
  8000a56:	2203      	movs	r2, #3
@@ -1182,7 +1178,7 @@ void Send_MIDINoteOff_2(uint8_t control){
  8000a64:	bd80      	pop	{r7, pc}
  8000a66:	bf00      	nop
  8000a68:	20000002 	.word	0x20000002
- 8000a6c:	200000a4 	.word	0x200000a4
+ 8000a6c:	20000060 	.word	0x20000060
 
 08000a70 <main>:
 /**
